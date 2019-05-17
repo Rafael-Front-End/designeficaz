@@ -1,0 +1,39 @@
+
+#bloco_thema_zflag #body{
+    border-left: 1px solid #999;
+}
+
+
+#bloco_thema_zflag #menu li a,
+#bloco_thema_zflag #menu li,
+#bloco_thema_zflag .form-group,
+#bloco_thema_zflag textarea,
+#bloco_thema_zflag label,
+#bloco_thema_zflag input,
+#bloco_thema_zflag{
+	float: left;
+	width: 100%;
+	display:block;
+}
+
+
+
+#bloco_thema_zflag #menu li a{
+	text-decoration: none;
+	font-size: 16px;
+	color:#333;
+	font-weight: bold;
+	padding: 15px;
+}
+
+
+#bloco_thema_zflag textarea,
+#bloco_thema_zflag input{
+	padding:0;
+	margin:0;
+}
+
+
+#bloco_thema_zflag .painel_zflag{
+	padding:30px;
+}
