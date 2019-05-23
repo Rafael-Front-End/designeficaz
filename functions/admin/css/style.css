@@ -34,6 +34,26 @@
 }
 
 
+
+
 #bloco_thema_zflag .painel_zflag{
 	padding:30px;
+}
+
+
+#bloco_thema_zflag .icones_fontawesome i{
+	font-size: 25px;
+}
+
+
+#bloco_thema_zflag .icones_fontawesome{
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding:15px;
+}
+#bloco_thema_zflag .icones_fontawesome	span{
+    float: left;
+    width: 100%;
+    text-decoration: underline;
 }

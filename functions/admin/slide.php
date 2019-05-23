@@ -1,5 +1,5 @@
 <?php
-
+	$html = '<h2>Slide</h2>';
 	//Carrega os dados do slide
 	$tema_zflag_slide_principal = array();
 	if(get_option('tema_zflag_slide_principal')){
@@ -8,7 +8,7 @@
 	}
 
 	//Edita os dados
-	if(!empty($_POST['titulo']) && !empty($_POST['texto']) && !empty($_POST['ad_image'])){
+	if(!empty($_POST['titulo']) && !empty($_POST['texto'])){
 		if(!empty($_POST['id'])){
 			$new_key = $_POST['id'];
 		}else{
@@ -16,11 +16,11 @@
 			$new_key = $new_key == 0 || $new_key == NULL ? 1 : $new_key+1;
 		}
 
-		$tema_zflag_slide_principal[$new_key] = ['titulo' => $_POST['titulo'], 'texto' => $_POST['texto'], 'imagem' => $_POST['ad_image']];
-
+		$tema_zflag_slide_principal[$new_key] = ['titulo' => $_POST['titulo'], 'link' => $_POST['link'], 'texto' => $_POST['texto'], 'imagem' => $_POST['ad_image'], 'video' => $_POST['video']];
+		
 		delete_option('tema_zflag_slide_principal');
 		if(add_option('tema_zflag_slide_principal', json_encode($tema_zflag_slide_principal))){
-			$html = "Item Salvo";
+			$html .= "Item Salvo";
 		}
 	}
 
@@ -36,8 +36,10 @@
 					if($key == $_GET['id']){
 						$value = (array) $value;
 						$titulo = $value['titulo'];
+						$link = $value['link'];
 						$texto = $value['texto'];
 						$imagem = $value['imagem'];
+						$video = $value['video'];
 					}
 				}
 			}
@@ -46,11 +48,19 @@
 
 			$tabela_cadastro = 
 			'
-				<form id="salva_slide_thema_zflag" name="salvar" method="post" enctype="multipart/form-data">
-				            <input type="hidden" id="id" class="form-control" required name="id" value="'.$id.'">
+				<form id="zflag_form_slide" name="salvar" method="post" enctype="multipart/form-data">
+				            <input type="hidden" id="id" class="form-control"  name="id" value="'.$id.'">
 						<div class="form-group">
 				            <label for="titulo">Titulo</label>
-				            <input type="text" id="titulo" class="form-control" required name="titulo" value="'.$titulo.'">
+				            <input type="text" id="titulo" class="form-control"  name="titulo" value="'.$titulo.'">
+				        </div>
+				        <div class="form-group">
+				            <label for="link">Link</label>
+				            <input type="text" id="link" class="form-control"  name="link" value="'.$link.'">
+				        </div>
+				        <div class="form-group">
+				            <label for="video">Video</label>
+				            <input type="text" id="video" class="form-control"  name="video" value="'.$video.'">
 				        </div>
 				        <div class="form-group">
 				            <label class="texto">Texto</label>
@@ -69,7 +79,7 @@
 					</form>
 			';
 
-			$html = $tabela_cadastro;
+			$html .= $tabela_cadastro;
 		}else if($_GET['acao'] == 'listar'){
 
 			//Lista os sliders
@@ -104,7 +114,7 @@
 
 				}
 
-				$html = '
+				$html .= '
 				<table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
 					<thead>
 						<tr role="row">
@@ -132,14 +142,16 @@
 						$titulo = $value['titulo'];
 						$texto = $value['texto'];
 						$imagem = $value['imagem'];
+						$video = $value['video'];
+						$link = $value['link'];
 
-						$new_tema_zflag_slide_principal[$key] = ['titulo' => $titulo, 'texto' => $texto, 'imagem' => $imagem];
+						$new_tema_zflag_slide_principal[$key] = ['titulo' => $titulo,'link' => $link, 'texto' => $texto, 'imagem' => $imagem];
 					}
 				}
 
 				delete_option('tema_zflag_slide_principal');
 				if(add_option('tema_zflag_slide_principal', json_encode($new_tema_zflag_slide_principal))){
-					$html = "Item Excluido";
+					$html .= "Item Excluido";
 				}
 				
 			}

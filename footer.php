@@ -38,9 +38,11 @@
     <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/assets/js/layerslider.transitions.js" language="javascript"></script>
     <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/assets/js/layerslider.kreaturamedia.jquery.js" language="javascript"></script>
     <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/jQueryRotate.js" language="javascript"></script>
-    
-    
-    <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/script.js" language="javascript"></script>
+    <script src="<?php bloginfo( 'template_directory' ); ?>/lib/venobox/venobox.min.js"></script>
+    <script src="<?php bloginfo( 'template_directory' ); ?>/lib/isotope/isotope.pkgd.min.js"></script>
+
+
+    <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/script.js?version=1.0.0.1" language="javascript"></script>
 
  
 	<div id="fb-root"></div>

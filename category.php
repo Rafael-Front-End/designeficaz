@@ -13,7 +13,7 @@ get_header();
 
 <main id="pagina_categoria" class="site-main container" role="main">
 	<div class="col-md-8">
-		<div class="tipo_<?php echo TEMA_CATEGORIA;?> destaque_categorias">
+		<div class="destaque_categorias">
 			<?php 
 			// Check if there are any posts to display
 			if ( have_posts() ) : 
@@ -47,8 +47,6 @@ get_header();
 				$autor_link      = get_site_url()."/author/".$autor;
 				$id_post    = $post->ID;
 			
-
-				if(TEMA_CATEGORIA == 2){
 					$html_categoria_cultura .='
 				        <div class="tipo_1	 destaque_categorias">
 				            '.($contador == 1 ? '' : '<h3></h3>').'
@@ -64,49 +62,7 @@ get_header();
 		                    </div>
 				        </div>
 	                  ';
-	            }else if(TEMA_CATEGORIA == 3){
-					$html_categoria_cultura .='
-						<a class="bloco_post esquerda col-md-6" href="'.$url.'">
-							<div  class="thumbnail_post" style="background-image:url('.$img.');"></div>
-							<h4>'.$titulo.'</h4>
-	                    </a>
-	                  ';
-	            }else if(TEMA_CATEGORIA == 4){
-					$html_categoria_cultura .='
-				        <div class="bloco_post esquerda col-md-4">
-	                      <a href="'.$url.'"  class="thumbnail_post" style="background-image:url('.$img.');"></a>
-	                      <h4>'.$titulo.'</h4>
-	                      <p>'.$resumo.'</p>
-	                    </div>
-	                  ';
-	            }else if(TEMA_CATEGORIA == 5){
 
-	            	$html_categoria_cultura .='
-		        		<a href="'.$url.'" class="bloco_categoria col-md-6" style="background-image: url('.$img.');">
-		                    <div class="content-post">
-		                      <h3>'.$titulo.'</h3>
-		                      <p>'.$resumo.'...</p>
-		                    </div>
-		                </a>
-		              ';
-					
-	            }else{
-		        	
-
-		              $html_categoria_cultura .='
-				        <div class="tipo_1 destaque_categorias">
-				            '.($contador == 1 ? '' : '<h3></h3>').'
-		                    <div class="bloco_post">
-		                    	<a href="'.$url.'"  class="thumbnail_post" style="background-image:url('.$img.');"></a>
-		                        <a href="'.$url.'" class="content_post">
-		                          <h4>'.$titulo.'</h4>
-		                          <p>'.$resumo.'...</p>
-		                          
-		                        </a>
-		                    </div>
-				        </div>
-	                  ';
-	            }
 			 endwhile; 
 			 echo $html_categoria_cultura;
 

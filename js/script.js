@@ -7,6 +7,49 @@ $(window).load(function() {
  
 $(function(){ 
 
+	/*----------------------------
+	   isotope active
+	  ------------------------------ */
+	  // portfolio start
+	  $(window).on("load", function() {
+	    var $container = $('.awesome-project-content');
+	    var primeiro_item = $('.awesome-menu ul li:first a').data('filter');
+	    $('.awesome-menu ul li:first a').addClass('active');
+	    $container.isotope({
+	      filter: primeiro_item,
+	      animationOptions: {
+	        duration: 750,
+	        easing: 'linear',
+	        queue: false
+	      }
+	    });
+	    var pro_menu = $('.project-menu li a');
+	    pro_menu.on("click", function() {
+	      var pro_menu_active = $('.project-menu li a.active');
+	      pro_menu_active.removeClass('active');
+	      $(this).addClass('active');
+	      var selector = $(this).attr('data-filter');
+	      $container.isotope({
+	        filter: selector,
+	        animationOptions: {
+	          duration: 750,
+	          easing: 'linear',
+	          queue: false
+	        }
+	      });
+	      return false;
+	    });
+
+	  });
+	  //portfolio end
+	  
+
+	    /*---------------------
+    Venobox
+  --------------------- */
+  var veno_box = $('.venobox');
+  veno_box.venobox();
+  
 	$('#botao_pesquisa.fa-search').on('click', function(){
 
 		if($('#barra_pesquisa').is(':hidden'))
@@ -129,27 +172,27 @@ $(function(){
 	});
 
 	
-	ScaleSlider();
-	$(window).bind("load", ScaleSlider);
-	$(window).bind("resize", ScaleSlider);
-	$(window).bind("orientationchange", ScaleSlider);
-	/*responsive code end*/
+	// ScaleSlider();
+	// $(window).bind("load", ScaleSlider);
+	// $(window).bind("resize", ScaleSlider);
+	// $(window).bind("orientationchange", ScaleSlider);
+	// /*responsive code end*/
 
-	var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);	
+	// var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);	
 
-	/*responsive code begin*/
-	/*you can remove responsive code if you don't want the slider scales while window resizing*/
-	function ScaleSlider() {
-	    var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-	    if (refSize) {
-	        refSize = Math.min(refSize, 960);
-	        refSize = Math.max(refSize, 300);
-	        jssor_1_slider.$ScaleWidth(refSize);
-	    }
-	    else {
-	        window.setTimeout(ScaleSlider, 30);
-	    }
-	}
+	// /*responsive code begin*/
+	// you can remove responsive code if you don't want the slider scales while window resizing
+	// function ScaleSlider() {
+	//     var refSize = jssor_1_slider.Elmt.parentNode.clientWidth;
+	//     if (refSize) {
+	//         refSize = Math.min(refSize, 960);
+	//         refSize = Math.max(refSize, 300);
+	//         jssor_1_slider.$ScaleWidth(refSize);
+	//     }
+	//     else {
+	//         window.setTimeout(ScaleSlider, 30);
+	//     }
+	// }
 			
 });
 

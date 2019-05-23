@@ -4,13 +4,19 @@
 	if(!empty($_GET['subpage'])){
 		if($_GET['subpage'] == 'slide'){
 			require('slide.php');
+		}else if($_GET['subpage'] == 'servicos'){
+			require('servicos.php');
+		}else if($_GET['subpage'] == 'planos'){
+			require('planos.php');
+		}else if($_GET['subpage'] == 'galeria'){
+			require('galeria.php');
 		}
 	}else{
 		$html = '<h2 style="text-align:center;">Nada aqui</h2>';
 	}
 
 
-   	wp_register_style( 'zflagtheme_fontawesome', get_template_directory_uri().'/plugin/fontawesome/css/fontawesome.min.css' ); 
+   	wp_register_style( 'zflagtheme_fontawesome', get_template_directory_uri().'/lib/font-awesome/css/font-awesome.min.css' ); 
     wp_enqueue_style('zflagtheme_fontawesome');
 
     wp_register_style( 'zflagtheme_js_style', get_template_directory_uri().'/functions/admin/css/style.css' ); 
@@ -44,6 +50,48 @@
 				          	<div class="bg-white py-2 collapse-inner rounded">
 					            <a class="collapse-item ajax_send" data-subpage="slide" data-acao="cadastro" href="?page=zflag_theme_admin_geral&subpage=slide&acao=cadastro">Cadastrar</a>
 					            <a class="collapse-item ajax_send" data-subpage="slide" data-acao="listar"  href="?page=zflag_theme_admin_geral&subpage=slide&acao=listar">Editar</a>
+					            <div class="collapse-divider"></div>
+					        </div>
+				        </div>
+
+					</li>
+					<li class="nav-item"> 
+						<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage_servicos" aria-expanded="false" aria-controls="collapsePage_servicos">
+				          	<i class="glyphicon glyphicon-chevron-right"></i>
+				          	<span>Serviços</span>
+				        </a>
+				        <div id="collapsePage_servicos" class="collapse" aria-labelledby="headingPage_servicos" data-parent="#accordionSidebar" style="">
+				          	<div class="bg-white py-2 collapse-inner rounded">
+					            <a class="collapse-item ajax_send" data-subpage="servicos" data-acao="cadastro" href="?page=zflag_theme_admin_geral&subpage=servicos&acao=cadastro">Cadastrar</a>
+					            <a class="collapse-item ajax_send" data-subpage="servicos" data-acao="listar"  href="?page=zflag_theme_admin_geral&subpage=servicos&acao=listar">Editar</a>
+					            <div class="collapse-divider"></div>
+					        </div>
+				        </div>
+
+					</li>
+					<li class="nav-item"> 
+						<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage_planos" aria-expanded="false" aria-controls="collapsePage_planos">
+				          	<i class="glyphicon glyphicon-chevron-right"></i>
+				          	<span>Pacotes/Planos</span>
+				        </a>
+				        <div id="collapsePage_planos" class="collapse" aria-labelledby="headingPage_planos" data-parent="#accordionSidebar" style="">
+				          	<div class="bg-white py-2 collapse-inner rounded">
+					            <a class="collapse-item ajax_send" data-subpage="planos" data-acao="cadastro" href="?page=zflag_theme_admin_geral&subpage=planos&acao=cadastro">Cadastrar</a>
+					            <a class="collapse-item ajax_send" data-subpage="planos" data-acao="listar"  href="?page=zflag_theme_admin_geral&subpage=planos&acao=listar">Editar</a>
+					            <div class="collapse-divider"></div>
+					        </div>
+				        </div>
+
+					</li>
+					<li class="nav-item"> 
+						<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse_galeria" aria-expanded="false" aria-controls="collapse_galeria">
+				          	<i class="glyphicon glyphicon-chevron-right"></i>
+				          	<span>Galeria</span>
+				        </a>
+				        <div id="collapse_galeria" class="collapse" aria-labelledby="heading_galeria" data-parent="#accordionSidebar" style="">
+				          	<div class="bg-white py-2 collapse-inner rounded">
+					            <a class="collapse-item ajax_send" data-subpage="galeria" data-acao="cadastro" href="?page=zflag_theme_admin_geral&subpage=galeria&acao=cadastro">Cadastrar</a>
+					            <a class="collapse-item ajax_send" data-subpage="galeria" data-acao="listar"  href="?page=zflag_theme_admin_geral&subpage=galeria&acao=listar">Editar</a>
 					            <div class="collapse-divider"></div>
 					        </div>
 				        </div>

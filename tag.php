@@ -10,7 +10,7 @@ get_header();
 
 <main id="pagina_categoria" class="site-main container" role="main">
 	<div class="col-md-8">
-		<div class="tipo_<?php echo TEMA_CATEGORIA;?> destaque_categorias">
+		<div class="destaque_categorias">
 		<?php 
 			// Check if there are any posts to display
 		if ( have_posts() ) : 

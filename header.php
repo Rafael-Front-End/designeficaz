@@ -42,7 +42,7 @@ $fontes_config = $_SESSION['fontes_config'];
 
 
 
-
+     <link href="<?php bloginfo( 'template_directory' ); ?>/lib/venobox/venobox.css" rel="stylesheet">
     <link href="<?php bloginfo( 'template_directory' ); ?>/js/jqueryslimscroll/examples/libs/prettify/prettify.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/jqueryslimscroll/examples/libs/prettify/prettify.js"></script>
     <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/jqueryslimscroll/jquery.slimscroll.js"></script>

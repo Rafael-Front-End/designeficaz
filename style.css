@@ -49,9 +49,213 @@ h4{
 }
 
 
+
+
+
+/*----------------------------------------
+ 10.Portfolio Area Css
+----------------------------------------*/
+
+.hovercinza{
+  filter: grayscale(100%);
+
+}
+
+.single-awesome-project:hover{
+   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+50,000000+51,111111+60,2b2b2b+76,1c1c1c+91,131313+100;Black+Gloss+%231 */
+background: #000 !important; /* Old browsers */
+background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+}
+
+.single-awesome-project:hover .hovercinza{
+      -webkit-transition: 500ms -webkit-filter linear;
+      -moz-transition: 500ms -moz-filter linear;
+      -moz-transition: 500ms filter linear;
+      -ms-transition: 500ms -ms-filter linear;
+      -o-transition: 500ms -o-filter linear;
+      transition: 500ms filter linear, 500ms -webkit-filter linear;
+      filter: grayscale(0%);
+
+
+
+}
+
+
+
+
+.awesome-project-content .photo{
+  padding: 0;
+  margin:0;
+}
+
+.fix{
+  overflow: hidden;
+}
+.pst-content {
+  padding-left: 10px;
+}
+
+.project-menu {
+  margin: 40px;
+  text-align: center;
+}
+
+.project-menu li {
+  display: inline-block;
+  border: none;
+  margin:0;
+}
+
+
+.project-menu li a {
+    background: #8a8a8a none repeat scroll 0 0 !important;
+    /* border: 1px solid #444; */
+    /* border-radius: 20px; */
+    color: #fff !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0;
+    padding: 18px 30px;
+    text-transform: capitalize;
+    transition: all 0.3s ease 0s;
+}
+
+.project-menu li a.active, .project-menu li a:hover {
+  background: #2a365a !important;
+  text-decoration: none;
+}
+
+.single-awesome-portfolio {
+  float: left;
+  overflow: hidden;
+  padding: 15px;
+  width: 25%;
+  position: relative;
+}
+
+.single-awesome-project {
+  overflow: hidden;
+}
+
+.first-item {
+  margin-bottom: 30px;
+}
+
+.awesome-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.awesome-img>a {
+  display: block;
+  position: relative;
+}
+
+/*.single-awesome-project:hover .awesome-img>a::after {
+  opacity: 1;
+}
+
+.single-awesome-project:hover .add-actions {
+  opacity: 1;
+  bottom: 0;
+}*/
+
+.awesome-img>a::after {
+  background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.add-actions {
+  background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+  bottom: 30px;
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 10px 15px;
+  position: absolute;
+  transition: all 0.4s ease 0s;
+  width: 100%;
+}
+
+.project-dec {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.project-dec a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.project-dec h4 {
+  margin-bottom: 5px;
+}
+
+.project-dec h4:hover {
+  color: #fff;
+}
+
+.project-dec h4 {
+  color: #ddd;
+  font-size: 24px;
+  margin-top: -45px;
+  padding-top: 50%;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.project-dec span {
+  color: #ddd;
+  font-size: 13px;
+}
+
+.project-action-btn {
+  display: block;
+  height: 100%;
+  text-align: center;
+  transition: all 1s ease 0s;
+  width: 100%;
+}
+
+.project-action-btn li {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.project-action-btn li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
 .slide_home .imagem_slide img{
   float: right;
 }
+
+#pagina_portfolio,
 .slide_home .item span{
   float: left;
   width: 100%;
@@ -2342,6 +2546,7 @@ footer .textwidget h3 .theme-border-color {
    margin:10px 0;
 }
 
+
 .destaque_categorias > .bloco_post > .thumbnail_post:hover{
       -webkit-transition: 500ms -webkit-filter linear;
       -moz-transition: 500ms -moz-filter linear;
@@ -2352,6 +2557,8 @@ footer .textwidget h3 .theme-border-color {
 
       filter: grayscale(0%);
 }
+
+
 
 .carousel_tipo_1 .carousel-inner > .item{
   height: 500px;
