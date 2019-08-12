@@ -1,36 +1,39 @@
 <?php
 /**
- * The template used for displaying page content
- *
- * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
- */
-    
-    echo '<header id="pagina_cabecalho"><div class="container"><div class="col-md-12">';
+Template Name: Com Sidebar
+*/
+
+get_header(); 
+
+
+
+    // Start the loop.
+    while ( have_posts() ) : the_post();
+
+
+  echo '<header id="pagina_cabecalho"><div class="container"><div class="col-md-12">';
         the_title( '<h1 id="titulo_pagina">', '</h1>' );
     echo '</div></div></header>';
 ?>
  <main id="main" class="site-main container" role="main">
-    <div id="tema2">
+    <div id="tema2" class="col-md-8">
         <section class="conteudo_post">
 
+                 
 
-            <div id="texto_post">
-                <?php  the_content(); ?>
-            </div>
-            
-            <?php 
-                // If comments are open or we have at least one comment, load up the comment template.
-                // if ( comments_open() || get_comments_number() ) :
-                //     comments_template();
-                // endif;
-            ?> 
+                <?php  
+                  // Include the page content template.
+
+                  the_content(); 
+                ?>
+
+
+ 
         </section>
     </div>
 
 
-            
+    <?php get_sidebar(); ?>       
 </main><!-- #main -->
  <div class="col-md-12 social_footer">
     <h3>Também estamos aqui</h3>
@@ -46,3 +49,10 @@
       
     </div>
 </div>
+
+
+<?php 
+                   // End the loop.
+              endwhile;
+              
+get_footer(); ?>

@@ -18,113 +18,81 @@ class slide_pagina_inicial extends WP_Widget
           $tema_zflag_slide_principal = json_decode(get_option('tema_zflag_slide_principal'));
           $tema_zflag_slide_principal = (array) $tema_zflag_slide_principal;
            $contador_de_post = 0;
-           $html_slide_img = $html_slide_txt = '';
-
           foreach ($tema_zflag_slide_principal as $key => $value) {
             $contador_de_post++;
             $value = (array) $value;
             $titulo = $value['titulo'];
-            $texto = '<h1 class="title2">'.stripslashes($value['texto']).'</h1>';
+            $img_align = $value['img_align'];
+            $texto = stripslashes($value['texto']);
             $imagem = $value['imagem'];
-            $video = $value['video'];
-
-            if($video != NULL){
-              $texto = '
-              <div class="video_slide">
-              <div class="embed-responsive embed-responsive-16by9 p-t-16">
-                <div class="videoWrapper">
-                  <iframe width="640" height="360" src="'.$video.'" frameborder="0" allowfullscreen="" builderautoplay="0"></iframe>
-                </div>
-              </div>
-              </div>
+            $background = $value['background'];
 
 
-              ';
+            if(!empty($value['video'])){
+              $lado_imagem = '<iframe src="'.$value['video'].'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            }else{
+              $lado_imagem = "<img class='img-fluid' src='{$imagem}'>";
             }
 
 
-            $html_slide_img .= '<img src="'.$imagem.'" alt="" title="#slider-direction-'.$key.'" />';
-            if(count($tema_zflag_slide_principal) > 1){
-                $html_slide_txt .= '
+            $html_destaques .= " 
+                <div style='".($background != NULL ? 'background-color:'.$background.';' : '')."' class=\"item ".($contador_de_post == 1 ? 'active' : '')."\">
+                  <div class=\"container\">";
 
-                  <!-- direction '.$key.' -->
-                  <div id="slider-direction-'.$key.'" class="slider-direction slider-two">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                          <div class="slider-content text-center">
-                              <!-- layer 1 -->
-                              <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                                <h2 class="title1">'.$titulo.'</h2>
-                              </div>
+                    if($img_align == 'Esquerda'){
+                        $html_destaques .="<div class='lado-imagem imagem_slide'>$lado_imagem</div>";
+                      }
 
-                              <!-- layer 2 -->
-                              <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                '.$texto.'
-                              </div>
-
-                              <!-- layer 3 -->
-                              <div class="layer-1-3 wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                                <a class="ready-btn page-scroll" href="#about">Quero fazer parte</a>
-                              </div>
-                          </div>
-                        </div>
+                    $html_destaques .= " 
+                       <div class='lado-texto'>
+                        <h1>{$titulo}</h1>
+                        {$texto}
                       </div>
-                    </div>
+                      ";
+                        
+                      if($img_align == 'Direita'){
+                        $html_destaques .="<div class='lado-imagem imagem_slide'>$lado_imagem</div>";
+                      }
+
+
+            $html_destaques .= "
+                      
                   </div>
-                ';
-              }else{
-                $html_slide_txt .= '
 
-                  <!-- direction '.$key.' -->
-                  <div id="slider-direction-'.$key.'" class="slider-direction slider-two">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                          <div class="slider-content text-center">
-                              <!-- layer 1 -->
-                              <div class="layer-1-1 hidden-xs wow" data-wow-duration="2s" data-wow-delay=".2s">
-                                <h2 class="title1">'.$titulo.'</h2>
-                              </div>
+                </div>
+                <div id=\"#rolldownslide\"></div>
+            ";
 
-                              <!-- layer 2 -->
-                              <div class="layer-1-2 wow" data-wow-duration="2s" data-wow-delay=".1s">
-                                <h1 class="title2">'.$texto.'</h1>
-                              </div>
-
-                              <!-- layer 3 -->
-                              <div class="layer-1-3 wow" data-wow-duration="2s" data-wow-delay=".2s">
-                                <a class="ready-btn page-scroll" href="#about">Quero fazer parte</a>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <style>
-                  .nivo-controlNav,
-                    .nivo-directionNav {
-                        display: none;
-                    }
-                  </style>
-                ';
-              }
           }
 
          
 
           $slide_html = 
-          '<!-- Start Slider Area -->
-            <div id="home" class="slider-area">
-              <div class="bend niceties preview-2">
-                <div id="ensign-nivoslider" class="slides">
-                  '.$html_slide_img.'
+          "<div class='slide_home carousel_tipo_1'>
+              <div id=\"myCarousel{$id_bootstrap_carousel}\" class=\"carousel slide carousel-fade\" data-ride=\"carousel\">
+                <!-- Indicators -->
+                <!-- ol class=\"carousel-indicators\">
+                  <li data-target=\"#myCarousel{$id_bootstrap_carousel}\" data-slide-to=\"0\" class=\"\"></li>
+                  <li data-target=\"#myCarousel{$id_bootstrap_carousel}\" data-slide-to=\"1\" class=\"\"></li>
+                  <li data-target=\"#myCarousel{$id_bootstrap_carousel}\" data-slide-to=\"2\" class=\"active\"></li>
+                </ol -->
+                <div class=\"carousel-inner\" role=\"listbox\">
+                  $html_destaques
                 </div>
-                '.$html_slide_txt.'    
-              </div>
-            </div>';
+                <a class=\"left carousel-control\" href=\"#myCarousel{$id_bootstrap_carousel}\" role=\"button\" data-slide=\"prev\">
+                  <img class='seta_esq' src=\"".get_bloginfo( 'template_directory' )."/imagens/icons/seta_esq.png\">
+                  <span class=\"sr-only\">Previous</span>
+                </a>
+                <a class=\"right carousel-control\" href=\"#myCarousel{$id_bootstrap_carousel}\" role=\"button\" data-slide=\"next\">
+                  <img class='seta_dir' src=\"".get_bloginfo( 'template_directory' )."/imagens/icons/seta_dir.png\">
+                  <span class=\"sr-only\">Next</span>
+                </a>
+                <a class=\"page-scroll\" id=\"rolldownslide\" href=\"#rolldownslide\"><span class=\"glyphicon glyphicon-menu-down\" aria-hidden=\"true\"></span></a>
 
-            echo do_shortcode($slide_html);
+              </div>
+            </div>";
+
+            echo '<header id="pagina_cabecalho">'.do_shortcode($slide_html).'</header>';
         }
            
     echo $args["after_widget"];

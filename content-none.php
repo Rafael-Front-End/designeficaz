@@ -7,12 +7,12 @@
  * @package WordPress
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
- */
+ */ 
 ?>
 
-<section class="no-results not-found">
+<section class="no-results not-found destaque_categorias">
 	<header class="page-header">
-		<h1 id="titulo_pagina" class="page-title"><?php _e( 'Nada encontrado'); ?></h1>
+		<h2 id="titulo_pagina" class="page-title"><?php _e( 'Nada encontrado'); ?></h2>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -24,7 +24,7 @@
 		<?php elseif ( is_search() ) : ?>
 
 			<p><?php _e( 'Desculpe, mas nada correspondeu aos termos da sua pesquisa. Por favor, tente novamente com algumas palavras-chave diferentes.' ); ?></p>
-			<?php get_search_form(); ?>
+			<?php //get_search_form(); ?>
 
 		<?php else : ?>
 

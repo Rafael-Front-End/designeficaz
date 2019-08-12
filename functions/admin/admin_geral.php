@@ -10,6 +10,8 @@
 			require('planos.php');
 		}else if($_GET['subpage'] == 'galeria'){
 			require('galeria.php');
+		}else if($_GET['subpage'] == 'galeria_home'){
+			require('galeria_home.php');
 		}
 	}else{
 		$html = '<h2 style="text-align:center;">Nada aqui</h2>';
@@ -92,6 +94,20 @@
 				          	<div class="bg-white py-2 collapse-inner rounded">
 					            <a class="collapse-item ajax_send" data-subpage="galeria" data-acao="cadastro" href="?page=zflag_theme_admin_geral&subpage=galeria&acao=cadastro">Cadastrar</a>
 					            <a class="collapse-item ajax_send" data-subpage="galeria" data-acao="listar"  href="?page=zflag_theme_admin_geral&subpage=galeria&acao=listar">Editar</a>
+					            <div class="collapse-divider"></div>
+					        </div>
+				        </div>
+
+					</li>
+					<li class="nav-item"> 
+						<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse_galeria_home" aria-expanded="false" aria-controls="collapse_galeria_home">
+				          	<i class="glyphicon glyphicon-chevron-right"></i>
+				          	<span>Galeria Home</span>
+				        </a>
+				        <div id="collapse_galeria_home" class="collapse" aria-labelledby="heading_galeria_home" data-parent="#accordionSidebar" style="">
+				          	<div class="bg-white py-2 collapse-inner rounded">
+					            <a class="collapse-item ajax_send" data-subpage="galeria_home" data-acao="cadastro" href="?page=zflag_theme_admin_geral&subpage=galeria_home&acao=cadastro">Cadastrar</a>
+					            <a class="collapse-item ajax_send" data-subpage="galeria_home" data-acao="listar"  href="?page=zflag_theme_admin_geral&subpage=galeria_home&acao=listar">Editar</a>
 					            <div class="collapse-divider"></div>
 					        </div>
 				        </div>

@@ -16,7 +16,7 @@
 			$new_key = $new_key == 0 || $new_key == NULL ? 1 : $new_key+1;
 		}
 
-		$tema_zflag_slide_principal[$new_key] = ['titulo' => $_POST['titulo'], 'link' => $_POST['link'], 'texto' => $_POST['texto'], 'imagem' => $_POST['ad_image'], 'video' => $_POST['video']];
+		$tema_zflag_slide_principal[$new_key] = ['background' => $_POST['background'], 'img_align' => $_POST['img_align'], 'titulo' => $_POST['titulo'], 'link' => $_POST['link'], 'texto' => $_POST['texto'], 'imagem' => $_POST['ad_image'], 'video' => $_POST['video']];
 		
 		delete_option('tema_zflag_slide_principal');
 		if(add_option('tema_zflag_slide_principal', json_encode($tema_zflag_slide_principal))){
@@ -40,6 +40,8 @@
 						$texto = $value['texto'];
 						$imagem = $value['imagem'];
 						$video = $value['video'];
+						$background = !empty($value['background']) ? $value['background'] : '#77D9E2';
+						$img_align = $value['img_align'];
 					}
 				}
 			}
@@ -61,6 +63,19 @@
 				        <div class="form-group">
 				            <label for="video">Video</label>
 				            <input type="text" id="video" class="form-control"  name="video" value="'.$video.'">
+				        </div> 
+
+				        <div class="form-group">
+				            <label for="background">Cor do fundo do slide em exadecimal</label>
+				            <input type="text" placeholder="#77D9E2" id="background" class="form-control"  name="background" value="'.$background.'">
+				        </div>
+				        <div class="form-group">
+				            <label for="img_align">Alinhar imagem</label>
+				            <select name="img_align" id="img_align" class="postform">
+				                <option '.($img_align == 'Direita' || $img_align == NULL ? 'selected="selected"' : '').' class="level-0" value="Direita">Direita</option>
+				                <option '.($img_align == 'Esquerda' ? 'selected="selected"' : '').' class="level-0" value="Esquerda">Esquerda</option>
+				              </select>
+
 				        </div>
 				        <div class="form-group">
 				            <label class="texto">Texto</label>
@@ -143,9 +158,11 @@
 						$texto = $value['texto'];
 						$imagem = $value['imagem'];
 						$video = $value['video'];
+						$img_align = $value['img_align'];
+						$background = $value['background'];
 						$link = $value['link'];
 
-						$new_tema_zflag_slide_principal[$key] = ['titulo' => $titulo,'link' => $link, 'texto' => $texto, 'imagem' => $imagem];
+						$new_tema_zflag_slide_principal[$key] = ['background' => $background, 'img_align' => $img_align, 'titulo' => $titulo,'link' => $link, 'texto' => $texto, 'imagem' => $imagem];
 					}
 				}
 

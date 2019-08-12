@@ -36,18 +36,16 @@
             ";
         }
     }
-  
+    
+        echo '<header id="pagina_cabecalho"><div class="container"><div class="col-md-12"><h1 id="titulo_pagina"><a href="'.get_permalink( get_page_by_path( 'blog' ) ).'">Blog</a><span class="breadcrumb_post"> / <a href="'.$link_categoria.'">'.$Nome_categoria.'</a></span></h1></div></div></header>';
 ?>
  <main id="main" class="site-main container default_post" role="main">
-        <div class="col-md-8">
-            <header id="titulo_post">
-                    <?php  
-                        the_title( '<h1>', '</h1>' );
-                    ?>
-            </header>
-            <div class=''>
-                <section id="post_thumbnail" class="">
-                <?php 
+        <div id="tema2"  class="col-md-8">
+            <section class="conteudo_post">
+                 <?php 
+
+                    the_title( '<h1>', '</h1>' );
+
                     if($featured_video){
                         echo $featured_video;
                         
@@ -56,55 +54,50 @@
                     }
                 ?>
 
-                </section>
-                <?php echo $featured_audio;?>
-                <section class="conteudo_post">
+                <?php  the_content(); ?>
 
-                    <div id="texto_post">
-                        <?php  the_content(); ?>
-                    </div>
-                    
-                    <div id='inner_post_widget'> <?php dynamic_sidebar('inner_post_widget'); ?></div>
-                    <?php
-                         echo '
-                            <div class="entry-meta">
-                                <a  href="'.$autor_link.'" class="link_avatar meta-item author">
-                                    <img src="'.get_avatar_url(get_the_author_ID()).'" alt="">
-                                </a>
-                                <div class="bloco_text_autor">
-                                    <span class="vcard author">
-                                        <span class="fn">
-                                            Por <a  href="'.$autor_link.'" class="meta-item author">'.$autor.'</a>
-                                        </span>
+                
+                <div id='inner_post_widget'> <?php dynamic_sidebar('inner_post_widget'); ?></div>
+                <?php
+                     echo '
+                        <div class="entry-meta">
+                            <a  href="'.$autor_link.'" class="link_avatar meta-item author">
+                                <img src="'.get_avatar_url(get_the_author_ID()).'" alt="">
+                            </a>
+                            <div class="bloco_text_autor">
+                                <span class="vcard author">
+                                    <span class="fn">
+                                        Por <a  href="'.$autor_link.'" class="meta-item author">'.$autor.'</a>
                                     </span>
-                                    
-                                    <div class="meta-item date">
-                                        <span class="updated">
-                                            '.get_the_time(__('j \d\e F \d\e Y, H:i', 'kubrick')) .'
-                                        </span>
-                                    </div>
+                                </span>
+                                
+                                <div class="meta-item date">
+                                    <span class="updated">
+                                        '.get_the_time(__('j \d\e F \d\e Y, H:i', 'kubrick')) .'
+                                    </span>
                                 </div>
                             </div>
-                                ';
+                        </div>
+                            ';
 
-                                $posttags = get_the_tags();
-if ($posttags && count($posttags) > 0) {
-    $n_tags = count($posttags);
-    $i =0;
-    foreach($posttags as $tag) {
-        $i++;
+                            $posttags = get_the_tags();
+                if ($posttags && count($posttags) > 0) {
+                    $n_tags = count($posttags);
+                    $i =0;
+                    foreach($posttags as $tag) {
+                        $i++;
 
-        if($i == $n_tags){
-            $html_tags .= $tag->name.'. '; 
-        }else{
-             $html_tags .=  $tag->name.', '; 
-        }
-    }
-    echo "<div class='tags'><b>Tags:</b> {$html_tags}</div>"; 
-}
-                    ?>
-                </section>
-            </div>
+                        if($i == $n_tags){
+
+                            $html_tags .= '<a href="'.get_term_link($tag).'">'.$tag->name.'</a>. '; 
+                        }else{
+                             $html_tags .= '<a href="'.get_term_link($tag).'">'.$tag->name.'</a>, '; 
+                        }
+                    }
+                    echo "<div class='tags'><b>Tags:</b> {$html_tags}</div>"; 
+                }
+                ?>
+            </section>
         </div>
         <?php get_sidebar(); ?>
 </main><!-- #main -->
@@ -112,12 +105,12 @@ if ($posttags && count($posttags) > 0) {
     <h3>Também estamos aqui</h3>
     <p>Acompanhe nosso trabalho em outras plataformas</p>
     <div id="rodape_social_icons" class="social-links">
-      <a target="_blank" href="https://www.facebook.com/designeficaz/"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-facebook.jpg"></a>
+      <a target="_blank" href="https://www.facebook.com/designeficaz/"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-facebook.jpg"></a>
       
-      <a target="_blank" href="https://www.instagram.com/designeficaz/"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-instagram.jpg"></a>
+      <a target="_blank" href="https://www.instagram.com/designeficaz/"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-instagram.jpg"></a>
       
-      <a target="_blank" href="https://www.behance.net/danieldesouz4"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-behance.jpg"></a>
-      <a target="_blank" href="https://www.colab55.com/@danieldesouz4"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-colab55.jpg"></a>
+      <a target="_blank" href="https://www.behance.net/danieldesouz4"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-behance.jpg"></a>
+      <a target="_blank" href="https://www.colab55.com/@danieldesouz4"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-colab55.jpg"></a>
       
       
     </div>

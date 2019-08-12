@@ -34,11 +34,11 @@
     
     $html_categoria_cultura .='
         <div class="bloco_post esquerda col-md-6">
-          '.$html_link_cat.'
-          <a href="'.$url.'" class="thumbnail_post" style="background-image:url('.$img.');"></a>
-          <span style="'.$cor_txt.$fontes.'">'.$titulo.'</span>
-          <p>Por <a href="'.$autor_link.'" class="author">'.$autor.'</a> | '.$data_post.'</p>
-        </div>
+                        '.$html_link_cat.'
+                        <a href="'.$url.'" class="thumbnail_post" style="background-image:url('.$img.');"></a>
+                        <a href="'.$url.'"><span style="'.$cor_txt.$fontes.'">'.$titulo.'</span></a>
+                        <p>por <a href="'.$autor_link.'" class="author">'.$autor.'</a> | '.$data_post.'</p>
+                      </div>
       ';
   	echo $html_categoria_cultura;
 ?>

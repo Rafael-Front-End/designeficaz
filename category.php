@@ -18,9 +18,6 @@ get_header();
 			// Check if there are any posts to display
 			if ( have_posts() ) : 
 	 
-
-			echo '<h3 id="titulo_pagina"><span>'.single_cat_title( '', false ).'</span></h3>';  
-			
 			if ( category_description() ) : 
 				echo "<p class='txt_descricao'>".strip_tags(category_description())."</p><h3></h3>"; 
 			endif; 
@@ -36,32 +33,31 @@ get_header();
 	            } 
 
 	            
-				$cat_inf    = get_the_category();
-				$url        = get_permalink();
-				$img        = $the_post_thumbnail;
-				$cat_name   = get_cat_name($cat_inf->cat_ID);
-				$titulo     = resumo_txt(get_the_title(),45,0);
-				$resumo     = resumo_txt(get_the_excerpt(),70,0);
-				$data_post  = get_the_date('d M Y');
-				$autor      = get_the_author();
-				$autor_link      = get_site_url()."/author/".$autor;
-				$id_post    = $post->ID;
-			
-					$html_categoria_cultura .='
-				        <div class="tipo_1	 destaque_categorias">
-				            '.($contador == 1 ? '' : '<h3></h3>').'
-		                    <div class="bloco_post">
-		                    	<a href="'.$url.'"  class="thumbnail_post" style="background-image:url('.$img.');"></a>
-		                        <div class="content_post">
-		                          <h4>'.$titulo.'</h4>
-		                          <p>'.$resumo.'...</p>
-		                          <p>
-		                          	<a href="'.$url.'" class="btn btn-default bloco_post">Leia mais</a></a>
-		                          </p>
-		                        </div>
-		                    </div>
-				        </div>
-	                  ';
+				
+                $cat_inf    = get_the_category();
+                $cat_inf    = $cat_inf[0];
+                $url        = get_permalink();
+                $img        = $the_post_thumbnail;
+                $cat_name   = get_cat_name($cat_inf->cat_ID);
+                $cat_link   = get_category_link($cat_inf->cat_ID);
+                $titulo     = resumo_txt(get_the_title(),45,0);
+                $resumo     = resumo_txt(get_the_excerpt(),70,0);
+                $data_post  = get_the_date('d M Y');
+                $autor      = get_the_author();
+                $autor_link      = get_site_url()."/author/".$autor;
+                $id_post    = $post->ID;
+                $html_link_cat = "<a class='titlecat' href='{$cat_link}'>{$cat_name}</a>";
+
+
+    
+    $html_categoria_cultura .='
+<div class="bloco_post esquerda col-md-6">
+
+                        <a href="'.$url.'" class="thumbnail_post" style="background-image:url('.$img.');"></a>
+                        <a href="'.$url.'"><span style="'.$cor_txt.$fontes.'">'.$titulo.'</span></a>
+                        <p>por <a href="'.$autor_link.'" class="author">'.$autor.'</a> | '.$data_post.'</p>
+                      </div>
+      ';
 
 			 endwhile; 
 			 echo $html_categoria_cultura;
@@ -87,12 +83,12 @@ get_header();
     <h3>Também estamos aqui</h3>
     <p>Acompanhe nosso trabalho em outras plataformas</p>
     <div id="rodape_social_icons" class="social-links">
-      <a target="_blank" href="https://www.facebook.com/designeficaz/"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-facebook.jpg"></a>
+      <a target="_blank" href="https://www.facebook.com/designeficaz/"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-facebook.jpg"></a>
       
-      <a target="_blank" href="https://www.instagram.com/designeficaz/"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-instagram.jpg"></a>
+      <a target="_blank" href="https://www.instagram.com/designeficaz/"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-instagram.jpg"></a>
       
-      <a target="_blank" href="https://www.behance.net/danieldesouz4"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-behance.jpg"></a>
-      <a target="_blank" href="https://www.colab55.com/@danieldesouz4"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-colab55.jpg"></a>
+      <a target="_blank" href="https://www.behance.net/danieldesouz4"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-behance.jpg"></a>
+      <a target="_blank" href="https://www.colab55.com/@danieldesouz4"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-colab55.jpg"></a>
       
       
     </div>

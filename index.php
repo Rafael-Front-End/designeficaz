@@ -13,65 +13,10 @@
   get_header();
   add_theme_support( 'post-thumbnails' );
   
-
-  if(get_option('tema_zflag_slide_principal')){
-    $tema_zflag_slide_principal = json_decode(get_option('tema_zflag_slide_principal'));
-    $tema_zflag_slide_principal = (array) $tema_zflag_slide_principal;
-     $contador_de_post = 0;
-    foreach ($tema_zflag_slide_principal as $key => $value) {
-      $contador_de_post++;
-      $value = (array) $value;
-      $titulo = $value['titulo'];
-      $texto = stripslashes($value['texto']);
-      $imagem = $value['imagem'];
-
-      $html_destaques .= " 
-          <div class=\"item ".($contador_de_post == 1 ? 'active' : '')."\">
-            <div class=\"container\">
-                <div class='col-md-6'>
-                  <h1>{$titulo}</h1>
-                  {$texto}
-                </div>
-                <div class='col-md-6 imagem_slide'>
-                  <img src='{$imagem}'>
-                </div>
-            </div>
-          </div>
-      ";
-
-    }
-
-   
-
-    $slide_html = 
-    "<div class='slide_home carousel_tipo_1'>
-        <div id=\"myCarousel{$id_bootstrap_carousel}\" class=\"carousel slide\" data-ride=\"carousel\">
-          <!-- Indicators -->
-          <!-- ol class=\"carousel-indicators\">
-            <li data-target=\"#myCarousel{$id_bootstrap_carousel}\" data-slide-to=\"0\" class=\"\"></li>
-            <li data-target=\"#myCarousel{$id_bootstrap_carousel}\" data-slide-to=\"1\" class=\"\"></li>
-            <li data-target=\"#myCarousel{$id_bootstrap_carousel}\" data-slide-to=\"2\" class=\"active\"></li>
-          </ol -->
-          <div class=\"carousel-inner\" role=\"listbox\">
-            $html_destaques
-          </div>
-          <a class=\"left carousel-control\" href=\"#myCarousel{$id_bootstrap_carousel}\" role=\"button\" data-slide=\"prev\">
-            <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>
-            <span class=\"sr-only\">Previous</span>
-          </a>
-          <a class=\"right carousel-control\" href=\"#myCarousel{$id_bootstrap_carousel}\" role=\"button\" data-slide=\"next\">
-            <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>
-            <span class=\"sr-only\">Next</span>
-          </a>
-        </div>
-      </div>";
-
-      echo '<header id="pagina_cabecalho">'.do_shortcode($slide_html).'</header>';
-  }
-
+  dynamic_sidebar('topo_pagina_inicial'); 
 ?> 
   <main id="main" class="site-main container" role="main">
-    <div id='topo_home' class='col-md-12'><?php dynamic_sidebar('topo_pagina_inicial'); ?></div>
+
 
     <div id='pagina_inicial' class="col-md-12">
           <?php dynamic_sidebar('pagina_inicial'); ?>
@@ -104,12 +49,12 @@
     <h3>Também estamos aqui</h3>
     <p>Acompanhe nosso trabalho em outras plataformas</p>
     <div id="rodape_social_icons" class="social-links">
-      <a target="_blank" href="https://www.facebook.com/designeficaz/"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-facebook.jpg"></a>
+      <a target="_blank" href="https://www.facebook.com/designeficaz/"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-facebook.jpg"></a>
       
-      <a target="_blank" href="https://www.instagram.com/designeficaz/"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-instagram.jpg"></a>
+      <a target="_blank" href="https://www.instagram.com/designeficaz/"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-instagram.jpg"></a>
       
-      <a target="_blank" href="https://www.behance.net/danieldesouz4"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-behance.jpg"></a>
-      <a target="_blank" href="https://www.colab55.com/@danieldesouz4"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-colab55.jpg"></a>
+      <a target="_blank" href="https://www.behance.net/danieldesouz4"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-behance.jpg"></a>
+      <a target="_blank" href="https://www.colab55.com/@danieldesouz4"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-colab55.jpg"></a>
       
       
     </div>

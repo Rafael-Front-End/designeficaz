@@ -51,9 +51,22 @@ $fontes_config = $_SESSION['fontes_config'];
 
 
 
-    <link href="<?php echo bloginfo('stylesheet_url'); ?>" type="text/css" media="all" rel="stylesheet" />
-    <link rel="shortcut icon" href="<?php bloginfo('template_directory')?>/img/favicon.png" />
-      
+    <link href="<?php echo bloginfo('stylesheet_url'); ?>?version=0.0.0.1" type="text/css" media="all" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_directory')?>/imagens/fav32x32.ico" />
+    
+    <?php
+      if(!empty($_GET['orcamento_botao'])):
+        
+        echo "
+          <script>      
+            $(function(){ 
+              $(\".orcamento_botao.".$_GET['orcamento_botao']."\").prop( \"checked\", true );
+              $(\".orcamento_botao.".$_GET['orcamento_botao']."\").addClass('active');
+            });    
+          </script>";
+      endif;
+    ?>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -135,7 +148,7 @@ $fontes_config = $_SESSION['fontes_config'];
                         'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
                         'walker'            => new wp_bootstrap_navwalker())
                     );
-                ?>   
+            ?>   
               <!-- /.navbar-collapse -->
 
           </div><!-- .container -->

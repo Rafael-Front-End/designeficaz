@@ -15,8 +15,10 @@
 		    </div><!-- .container -->
 		    <section class="container copyright">
             <div id='copyright' class="col-md-12">
-              <div class="text-left col-md-6"> <img  src='<?php bloginfo( 'template_directory' ); ?>/imagens/footer.jpg'></div>
-              <div class="col-md-6" style="color:#999;font-size:16px; margin-top:30px;">Desenvolvido por Rafael Guimarães</div>
+              <div class="text-left col-md-6"> <img  class="logo-footer" src='<?php bloginfo( 'template_directory' ); ?>/imagens/footer.jpg'>
+                <span class="footer-copyright">Design Eficaz. Rio de Janeiro, 2019.<br>© Todos os direitos reservados</span>
+              </div>
+              <!-- div class="col-md-6" style="color:#999;font-size:16px; margin-top:30px;">Desenvolvido por Rafael Guimarães</div -->
             </div>
 		    </section>
 		</footer><!-- # -->
@@ -42,7 +44,7 @@
     <script src="<?php bloginfo( 'template_directory' ); ?>/lib/isotope/isotope.pkgd.min.js"></script>
 
 
-    <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/script.js?version=1.0.0.1" language="javascript"></script>
+    <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/script.js?version=1.0.2.2" language="javascript"></script>
 
  
 	<div id="fb-root"></div>

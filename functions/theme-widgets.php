@@ -37,6 +37,15 @@ function under_widgets_init() {
   ));
 
   register_sidebar(array(
+    'id' => 'topo_pagina_inicial',
+    'name'=>_('Topo da página inicial'),
+    'before_widget' => '',
+    'after_widget' => '', 
+    'before_title' => '',
+    'after_title' => ''
+  ));
+
+  register_sidebar(array(
     'name' => _('Barra lateral'),
     'id' => 'barra_lateral',
     'before_widget' => '',
@@ -293,10 +302,10 @@ class posts_recentes extends WP_Widget
                         <div class="coluna1">'.$html_link_cat.'
                           <a href="'.$url.'" class="thumbnail"><img src="'.$img.'"></a>
                         </div>
-                        <div class="content_post">
+                        <a href="'.$url.'" class="content_post">
                           <span style="'.$cor_txt.$fontes.'">'.$titulo.'</span>
                           <p>por <a href="'.$autor_link.'" class="author">'.$autor.'</a> | '.$data_post.'</p>
-                        </div>
+                        </a>
                       </div>
                     ';
 
@@ -315,7 +324,7 @@ class posts_recentes extends WP_Widget
                       <div class="bloco_post esquerda col-md-4">
                         '.$html_link_cat.'
                         <a href="'.$url.'" class="thumbnail_post" style="background-image:url('.$img.');"></a>
-                        <span style="'.$cor_txt.$fontes.'">'.$titulo.'</span>
+                        <a href="'.$url.'"><span style="'.$cor_txt.$fontes.'">'.$titulo.'</span></a>
                         <p>por <a href="'.$autor_link.'" class="author">'.$autor.'</a> | '.$data_post.'</p>
                       </div>
                     ';
@@ -1022,6 +1031,7 @@ require('widget_servicos.php');
 require('widget_planos.php');
 require('widget_texto.php');
 require('widget_galeria.php');
+require('widget_galeria_home.php');
 require('widget_posts_recentes.php');
 
 

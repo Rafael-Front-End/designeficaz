@@ -288,14 +288,14 @@ function categoria_bloco_link_shortcode($atts){
 
       if($url != NULL){
         $html_body = "
-          <a class='catbloclink col-md-{$col}' href='{$url}' class='col-md-4'>
+          <a class='catbloclink col-xs-{$col} col-md-{$col}' href='{$url}' class='col-md-4'>
             <h4>{$titl}</h4> 
             {$txt}
           </a>
         ";
       }else{
          $html_body = "
-          <div class='catbloclink col-md-{$col}' class='col-md-4'>
+          <div class='catbloclink col-xs-{$col} col-md-{$col}' class='col-md-4'>
             <h4>{$titl}</h4> 
             {$txt}
           </div>

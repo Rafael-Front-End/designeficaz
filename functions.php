@@ -1,7 +1,10 @@
 <?php 
 
 $temp_query = clone $wp_query;
- 
+
+update_option( 'thumbnail_size_w', 250 );
+update_option( 'thumbnail_size_h', 150 );
+
 if ( STYLESHEETPATH == TEMPLATEPATH ) {
     define('OF_FILEPATH', TEMPLATEPATH);
     define('OF_DIRECTORY', get_template_directory_uri());
@@ -33,6 +36,15 @@ function resumo_txt($txt,$n_caracter,$strip){
     return $conteudo_resumo;
 }
  
+
+/*Contact form 7 remove span*/
+add_filter('wpcf7_form_elements', function($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+
+    $content = str_replace('<br />', '', $content);
+        
+    return $content;
+});
 
 
 $bmIgnorePosts = array();

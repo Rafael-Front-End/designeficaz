@@ -6,6 +6,32 @@ $(window).load(function() {
 });
  
 $(function(){ 
+	$('.orcamento_botao').on("click", function(){
+		if($("input[value='"+$(this).data('checkbox')+"']:checkbox:checked").length > 0){
+			$("input[value='"+$(this).data('checkbox')+"']").prop( "checked", false );
+			$(this).removeClass('active');
+		}else{
+			$("input[value='"+$(this).data('checkbox')+"']").prop( "checked", true );
+			$(this).addClass('active');
+		}
+	});
+	var altura_slide = $(window).height() - $('#menu_topo').height();
+	console.log(altura_slide);
+	
+	$('#pagina_cabecalho .carousel-inner .item').css({'height': altura_slide+'px'});
+	$('#pagina_cabecalho .carousel-inner').css({'height': altura_slide+'px'});
+
+	  /*----------------------------
+  Page Scroll
+  ------------------------------ */
+  var page_scroll = $('a.page-scroll');
+  page_scroll.on('click', function(event) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+      scrollTop: $($anchor.attr('href')).offset().top - 10
+    }, 1500, 'easeInOutExpo');
+    event.preventDefault();
+  });
 
 	/*----------------------------
 	   isotope active
@@ -51,15 +77,17 @@ $(function(){
   veno_box.venobox();
   
 	$('#botao_pesquisa.fa-search').on('click', function(){
-
+		console.log($('#barra_pesquisa').is(':hidden'));
 		if($('#barra_pesquisa').is(':hidden'))
 	    {
 	     var height_menu = $('#menu_topo').height();
-	     var height_ani  = height_menu;
+	     var height_ani  = height_menu-17;
 	      $('#barra_pesquisa').stop().show().animate({top:height_ani+'px'}, 800);
 	    }else{
-	      $('#barra_pesquisa').stop().animate({top:'-1px'}, 800);
-	      $('#barra_pesquisa').hide();
+	    	var $barra = $('#barra_pesquisa');
+	      $barra.animate({top:'-1px'}, function(){
+	      	$barra.hide();
+	      });
 	    } 
 	});
 

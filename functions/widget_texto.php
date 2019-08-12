@@ -15,7 +15,7 @@ class New_Widget_Text extends WP_Widget {
       'customize_selective_refresh' => true,
     );
     $control_ops = array( 'width' => 400, 'height' => 350 );
-    parent::__construct( 'text', __( 'Text' ), $widget_ops, $control_ops );
+    parent::__construct( 'text', 'Zflag Texto', $widget_ops, $control_ops );
   }
 
   /**
@@ -45,7 +45,7 @@ class New_Widget_Text extends WP_Widget {
      * @param array          $instance    Array of settings for the current widget.
      * @param WP_Widget_Text $this        Current Text widget instance.
      */
-    $text = apply_filters( 'widget_text', $widget_text, $instance, $this );
+    $text = apply_filters( 'widget_text', do_shortcode($widget_text), $instance, $this );
 
 
       echo '<div class="textwidget">';

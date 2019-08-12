@@ -38,14 +38,17 @@ get_header();
                       $html_galeria .='
                         <!-- single-awesome-project start -->
                           <div class="col-md-4 col-sm-4 col-xs-12 photo '.$slug.'">
+
                             <div class="single-awesome-project">
                               <div class="awesome-img">
-                                <a href="#"><img class="hovercinza" width="100%" height="auto" src="'.$thumbnail[0].'" alt="" /></a>
+                                <a href="#"><img class="hovercinza" width="100%" height="auto" src="'.$thumbnail[0].'" alt="" />
+                            <div class="degrade"></div>
+                            </a>
                                 <div class="add-actions text-center">
                                   <div class="project-dec">
                                     <a class="venobox" data-gall="myGallery" href="'.$img.'">
                                       <h4>'.get_the_title( intval($value) ).'</h4>
-                                      <span>'.wp_get_attachment_caption( intval($value) ).'</span>
+                                      <span></span>
                                     </a>
                                   </div>
                                 </div>
@@ -101,12 +104,12 @@ get_header();
     <h3>Também estamos aqui</h3>
     <p>Acompanhe nosso trabalho em outras plataformas</p>
     <div id="rodape_social_icons" class="social-links">
-      <a target="_blank" href="https://www.facebook.com/designeficaz/"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-facebook.jpg"></a>
+      <a target="_blank" href="https://www.facebook.com/designeficaz/"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-facebook.jpg"></a>
       
-      <a target="_blank" href="https://www.instagram.com/designeficaz/"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-instagram.jpg"></a>
+      <a target="_blank" href="https://www.instagram.com/designeficaz/"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-instagram.jpg"></a>
       
-      <a target="_blank" href="https://www.behance.net/danieldesouz4"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-behance.jpg"></a>
-      <a target="_blank" href="https://www.colab55.com/@danieldesouz4"><img class="img-responsive" src="http://localhost/wordpress/wp-content/themes/designeficaz/imagens/espera/redes-sociais-colab55.jpg"></a>
+      <a target="_blank" href="https://www.behance.net/danieldesouz4"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-behance.jpg"></a>
+      <a target="_blank" href="https://www.colab55.com/@danieldesouz4"><img class="img-responsive" src="<?php echo get_bloginfo('url'); ?>/wp-content/themes/designeficaz/imagens/espera/redes-sociais-colab55.jpg"></a>
       
       
     </div>
