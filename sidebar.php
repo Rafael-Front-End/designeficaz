@@ -11,12 +11,25 @@
 
 
 
+	<?php
+		if(is_page('blog')){
+			if ( is_active_sidebar( 'sidebar_blog' ) ) : ?>
+				<div class="sidebar col-md-4">	 
+					<?php dynamic_sidebar( 'sidebar_blog' ); ?>
+			    </div>
+			<?php endif; 
 
+		}else{
+		?>
 			<?php if ( is_active_sidebar( 'barra_lateral' ) ) : ?>
 				<div class="sidebar col-md-4">	 
 					<?php dynamic_sidebar( 'barra_lateral' ); ?>
 			    </div>
-			<?php endif; ?>
+			<?php endif;
+
+		} ?>
+
+			 
 
 
 <?php endif; ?>

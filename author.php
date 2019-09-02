@@ -5,13 +5,15 @@
 
 get_header(); 
 
-
+$link = NULL;
 if(isset($_GET['author_name'])) :
-	$curauth = get_userdatabylogin($author_name);
+	$curauth = get_userdatabylogin($author_name); 
 else :
 	$curauth = get_userdata(intval($author));
 endif;
 
+if($curauth->user_url) $link .= ' <a href="'.$curauth->user_url.'">'.trim(getDomain($curauth->user_url)).'</a>';
+if($curauth->instagram) $link .= ($curauth->user_url != NULL ? ',' : '').' <a class="color-instagram" href="'.$curauth->instagram.'">'.$curauth->instagram.'</a>';
 ?> 
 
 
@@ -23,33 +25,30 @@ endif;
             <span class="vcard author">
                 <span class="fn">
                 <h4><?php echo $curauth->display_name; ?></h4>
-        		<p><a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a></p>
         		<?php if($curauth->user_description != NULL){ ?>
-        		<p><h4>Informações biográficas</h4></p>
         		<p><?php echo $curauth->user_description; ?></p>
         		<?php } ?>
                 	<div class="social-link-info clearfix nav-social-wrap">
 	                	<?php  
-	                		if($curauth->twitter){
-	                			echo '<a class="color-twitter" href="'.$curauth->twitter.'" target="_blank"><i class="fa fa-twitter"></i></a>';
-	                		}
+	                		// if($curauth->twitter){
+	                		// 	echo '<a class="color-twitter" href="'.$curauth->twitter.'" target="_blank"><i class="fa fa-twitter"></i></a>';
+	                		// }
 
-	                		if($curauth->facebook){
-	                			echo '<a class="color-facebook" href="'.$curauth->facebook.'" target="_blank"><i class="fa fa-facebook"></i></a>';
-	                		}
-	                		if($curauth->g_plus){
-	                			echo '<a class="color-plus" href="'.$curauth->g_plus.'" target="_blank"><i class="fa fa-google-plus"></i></a>';
-	                		}
-	                		if($curauth->pinterest){
-	                			echo '<a class="color-pinterest" href="'.$curauth->pinterest.'" target="_blank"><i class="fa fa-pinterest"></i></a>';
-	                		}
+	                		// if($curauth->facebook){
+	                		// 	echo '<a class="color-facebook" href="'.$curauth->facebook.'" target="_blank"><i class="fa fa-facebook"></i></a>';
+	                		// }
+	                		// if($curauth->g_plus){
+	                		// 	echo '<a class="color-plus" href="'.$curauth->g_plus.'" target="_blank"><i class="fa fa-google-plus"></i></a>';
+	                		// }
+	                		// if($curauth->pinterest){
+	                		// 	echo '<a class="color-pinterest" href="'.$curauth->pinterest.'" target="_blank"><i class="fa fa-pinterest"></i></a>';
+	                		// }
 	                		if($curauth->instagram){
-	                			echo '<a class="color-instagram" href="'.$curauth->instagram.'"><i class="fa fa-instagram"></i></a>
-	';
+	                			echo '<b>Veja mais:</b>'.$link;
 	                		}
-	                		if($curauth->youtube){
-	                			echo '<a class="color-youtube" href="'.$curauth->youtube.'" target="_blank"><i class="fa fa-youtube"></i></a>';
-	                		}
+	                		// if($curauth->youtube){
+	                		// 	echo '<a class="color-youtube" href="'.$curauth->youtube.'" target="_blank"><i class="fa fa-youtube"></i></a>';
+	                		// }
 	                	?>    
 		            </div>
 

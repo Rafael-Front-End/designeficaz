@@ -36,7 +36,7 @@ get_header();
                 $img        = $the_post_thumbnail;
                 $cat_name   = get_cat_name($cat_inf->cat_ID);
                 $cat_link   = get_category_link($cat_inf->cat_ID);
-                $titulo     = resumo_txt(get_the_title(),45,0);
+                $titulo     = get_the_title();
                 $resumo     = resumo_txt(get_the_excerpt(),70,0);
                 $data_post  = get_the_date('d M Y');
                 $autor      = get_the_author();
@@ -45,10 +45,12 @@ get_header();
                 $html_link_cat = "<a class='titlecat' href='{$cat_link}'>{$cat_name}</a>";
 
                 $html_categoria_cultura .='
-                    <div class="bloco_post esquerda col-md-6">
+                    <div class="bloco_post esquerda col-md-6"> 
                       '.$html_link_cat.'
                       <a href="'.$url.'" class="thumbnail_post" style="background-image:url('.$img.');"></a>
-                      <span style="'.$cor_txt.$fontes.'">'.$titulo.'</span>
+                      <a href="'.$url.'">
+                        <span style="'.$cor_txt.$fontes.'">'.$titulo.'</span>
+                      </a>
                       <p>Por <a href="'.$autor_link.'" class="author">'.$autor.'</a> | '.$data_post.'</p>
                     </div>
                   ';

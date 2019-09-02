@@ -44,7 +44,7 @@
     <script src="<?php bloginfo( 'template_directory' ); ?>/lib/isotope/isotope.pkgd.min.js"></script>
 
 
-    <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/script.js?version=1.0.2.2" language="javascript"></script>
+    <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/script.js?version=0.0.0.5" language="javascript"></script>
 
  
 	<div id="fb-root"></div>

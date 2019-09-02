@@ -30,28 +30,20 @@ $fontes_config = $_SESSION['fontes_config'];
 
     <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/jquery-1.11.1.min.js" language="javascript"></script>        
     <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/bootstrap.min.js" language="javascript"></script>
-    
-     
+    <script src="https://kit.fontawesome.com/a4502b4008.js"></script>
     <!-- EstilizaÃ§Ãµes do site -->
-
     <!-- link rel="shortcut icon" href="<?php bloginfo( 'template_directory' ); ?>/img/favicon.png" type="image/x-icon" -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C400%2C600%2C700%7COswald%3A400%2C700%7CRoboto%3A400%2C700%7CRaleway%3A400%2C700&subset=arabic" />
     <link href="<?php bloginfo( 'template_directory' ); ?>/assets/css/layerslider.css" type="text/css" media="all" rel="stylesheet" />
     <link href="<?php bloginfo( 'template_directory' ); ?>/css/bootstrap.min.css" type="text/css" media="all" rel="stylesheet" />
     <link href="<?php bloginfo( 'template_directory' ); ?>/css/font-awesome.min.css" type="text/css" media="all" rel="stylesheet" />
-
-
-
-     <link href="<?php bloginfo( 'template_directory' ); ?>/lib/venobox/venobox.css" rel="stylesheet">
+    <link href="<?php bloginfo( 'template_directory' ); ?>/lib/venobox/venobox.css" rel="stylesheet">
     <link href="<?php bloginfo( 'template_directory' ); ?>/js/jqueryslimscroll/examples/libs/prettify/prettify.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/jqueryslimscroll/examples/libs/prettify/prettify.js"></script>
     <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/jqueryslimscroll/jquery.slimscroll.js"></script>
     <link href="<?php bloginfo( 'template_directory' ); ?>/js/jqueryslimscroll/examples/style.css" type="text/css" rel="stylesheet" />
 
-
-
-
-    <link href="<?php echo bloginfo('stylesheet_url'); ?>?version=0.0.0.1" type="text/css" media="all" rel="stylesheet" />
+    <link href="<?php echo bloginfo('stylesheet_url'); ?>?version=0.0.3.9" type="text/css" media="all" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_directory')?>/imagens/fav32x32.ico" />
     
     <?php

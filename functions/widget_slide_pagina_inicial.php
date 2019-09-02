@@ -87,7 +87,7 @@ class slide_pagina_inicial extends WP_Widget
                   <img class='seta_dir' src=\"".get_bloginfo( 'template_directory' )."/imagens/icons/seta_dir.png\">
                   <span class=\"sr-only\">Next</span>
                 </a>
-                <a class=\"page-scroll\" id=\"rolldownslide\" href=\"#rolldownslide\"><span class=\"glyphicon glyphicon-menu-down\" aria-hidden=\"true\"></span></a>
+                <a class=\"page-scroll\" id=\"rolldownslide\" href=\"#rolldownslide\"><img src='".get_bloginfo( 'template_directory' )."/imagens/seta-abaixo-slide.png'></span></a>
 
               </div>
             </div>";

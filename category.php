@@ -40,7 +40,7 @@ get_header();
                 $img        = $the_post_thumbnail;
                 $cat_name   = get_cat_name($cat_inf->cat_ID);
                 $cat_link   = get_category_link($cat_inf->cat_ID);
-                $titulo     = resumo_txt(get_the_title(),45,0);
+                $titulo     = get_the_title();
                 $resumo     = resumo_txt(get_the_excerpt(),70,0);
                 $data_post  = get_the_date('d M Y');
                 $autor      = get_the_author();

@@ -56,7 +56,7 @@ Class My_Categories_Widget extends WP_Widget_Categories {
 		echo $args['before_widget'];
 
 		if ( $title ) {
-			echo "<h4 class='widget-categoria-titulo'>".$args['before_title'] . $title . $args['after_title']."aqui</h4>";
+			echo "<h4 class='widget-categoria-titulo'>".$args['before_title'] . $title . $args['after_title']."</h4>";
 		}
 
 		$cat_args = array(

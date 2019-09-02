@@ -3,6 +3,27 @@ $(window).load(function() {
     var itemlength = $('#news_carousel .item').length;
     var triggerheight = Math.round(boxheight/itemlength+1);
 	$('#news_carousel .list-group-item').outerHeight(triggerheight);
+
+
+		$('#rolldownslide').stop().on('mouseenter', function(event) {
+
+    
+		   $("#rolldownslide").animate({
+	            top: '90%'
+	        }, {
+	            duration: 200,
+	            complete: function() {
+	                $("#rolldownslide").animate({
+	                    top: '85%'
+	                }, {
+	                    duration: 200
+	                });
+	            }
+	        });
+	  	
+  	});
+
+
 });
  
 $(function(){ 
@@ -16,7 +37,6 @@ $(function(){
 		}
 	});
 	var altura_slide = $(window).height() - $('#menu_topo').height();
-	console.log(altura_slide);
 	
 	$('#pagina_cabecalho .carousel-inner .item').css({'height': altura_slide+'px'});
 	$('#pagina_cabecalho .carousel-inner').css({'height': altura_slide+'px'});
@@ -32,6 +52,9 @@ $(function(){
     }, 1500, 'easeInOutExpo');
     event.preventDefault();
   });
+
+
+
 
 	/*----------------------------
 	   isotope active

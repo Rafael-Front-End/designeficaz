@@ -36,6 +36,16 @@ function under_widgets_init() {
     'after_title' => ''
   ));
 
+
+  register_sidebar(array(
+    'id' => 'sidebar_blog',
+    'name'=>_('SideBar do blog'),
+    'before_widget' => '',
+    'after_widget' => '', 
+    'before_title' => '',
+    'after_title' => ''
+  ));
+
   register_sidebar(array(
     'id' => 'topo_pagina_inicial',
     'name'=>_('Topo da página inicial'),
@@ -261,9 +271,8 @@ class posts_recentes extends WP_Widget
 
               while (have_posts()) : the_post(); $contador_de_post++;
 
-
                 if ( has_post_thumbnail() ) {
-                  $the_post_thumbnail = get_the_post_thumbnail_url();
+                  $the_post_thumbnail = get_the_post_thumbnail_url($post->ID, array(250, 150) );
                 } else { 
                   $the_post_thumbnail = get_bloginfo('template_directory')."/imagens/default-image.png";
                 } 

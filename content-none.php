@@ -12,10 +12,10 @@
 
 <section class="no-results not-found destaque_categorias">
 	<header class="page-header">
-		<h2 id="titulo_pagina" class="page-title"><?php _e( 'Nada encontrado'); ?></h2>
+		<h2 id="titulo_pagina" class="page-title"><?php _e( 'Sua pesquisa não foi encontrada'); ?></h2>
 	</header><!-- .page-header -->
 
-	<div class="page-content">
+	<div class="page-content" style="margin-top: 10px; float: left;">
 
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 

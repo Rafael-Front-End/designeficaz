@@ -35,7 +35,7 @@ class ZflagGaleria extends WP_Widget
               $vetor_img = explode(', ', $imagem);
               
               foreach ($vetor_img as $key => $value) {
-                $thumbnail   =   wp_get_attachment_image_src(intval($value));
+                $thumbnail   =   wp_get_attachment_image_src(intval($value), 'medium');
                 $img         =   wp_get_attachment_url($value);
                 
                
