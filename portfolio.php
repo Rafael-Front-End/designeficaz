@@ -34,7 +34,6 @@ get_header();
                       $thumbnail   =   wp_get_attachment_image_src(intval($value), 'medium');
                       $img         =   wp_get_attachment_url($value);
                       
-                     
                       $html_galeria .='
                         <!-- single-awesome-project start -->
                           <div class="col-md-4 col-sm-4 col-xs-12 photo '.$slug.'">

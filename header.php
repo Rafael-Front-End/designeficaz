@@ -43,7 +43,7 @@ $fontes_config = $_SESSION['fontes_config'];
     <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/jqueryslimscroll/jquery.slimscroll.js"></script>
     <link href="<?php bloginfo( 'template_directory' ); ?>/js/jqueryslimscroll/examples/style.css" type="text/css" rel="stylesheet" />
 
-    <link href="<?php echo bloginfo('stylesheet_url'); ?>?version=0.0.3.9" type="text/css" media="all" rel="stylesheet" />
+    <link href="<?php echo bloginfo('stylesheet_url'); ?>" type="text/css" media="all" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_directory')?>/imagens/fav32x32.ico" />
     
     <?php
@@ -101,7 +101,7 @@ $fontes_config = $_SESSION['fontes_config'];
         <div class="container">
           <div class="col-md-12">
 
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>/" id='pequena_logo_topo'>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>/" id='pequena_logo_topo' class="desktop">
               <img class="img-responsive" alt="<?php echo( get_bloginfo( 'title' ) ); ?>"src="<?php echo( get_header_image() ); ?>">
             </a>
             
@@ -123,6 +123,11 @@ $fontes_config = $_SESSION['fontes_config'];
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
+
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>/" id='pequena_logo_topo' class="mobile">
+                    <img class="img-responsive" alt="<?php echo( get_bloginfo( 'title' ) ); ?>"src="<?php echo( get_header_image() ); ?>">
+                  </a>
+
                   <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
                   <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo $header_image_html; echo "<span>$site_title</span>";?></a>
               </div> 

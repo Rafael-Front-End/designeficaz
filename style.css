@@ -1369,7 +1369,7 @@ main#main{
   float: left;
   height: auto;
   width: 100%;
-  font:20px Arial;
+  font:22px Arial;
   color:#2a365a;
   text-align: center;
 }
@@ -1381,6 +1381,7 @@ main#main{
       margin-bottom: 20px;
   font-weight: Bold;
   font-size:50px;
+  line-height: 46px;
 }
 
 
@@ -3552,12 +3553,11 @@ Pagina de desenvolvimetno "espera"
 /*--------------- Portrait tablets and medium desktops ---------------*/
 @media (min-width: 1024px){
 
-
-
 }
 
 /*--------------- tablets and small desktops ---------------*/
 @media (max-width: 1024px){
+  
   #menu_topo_2.navbar-default .navbar-nav > li > a{
     font-size: 22px;
   }
@@ -3636,7 +3636,123 @@ Pagina de desenvolvimetno "espera"
 }
 
 
+@media (min-width: 768px){
+  .mobile{
+    display: none !important;
+  }
+
+  .desktop{
+    display: initial !important;
+  }
+  .slide_home .container.desktop{
+    display: table !important;
+  }
+}
+
+
 @media (max-width: 768px){
+  #navbar{
+    border:none;
+  }
+
+  #menu-menu_1{
+      background-color: #77D9E2;
+  }
+  .navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 19px 26px 19px 2px;
+  }
+
+  #botao_pesquisa.fa.fa-search {
+    font-size: 25px;
+    margin: 17px 0 10px 0;
+  }
+
+  .img-responsive{
+    max-width: 140px;
+  }
+
+  .navbar-toggle .icon-bar {
+    background-color: #232f50 !important;
+    width: 25px;
+    height: 3px;
+  }
+
+  .navbar-toggle {
+    float: left;
+    border: none;
+  }
+
+  .single-awesome-project .add-actions {
+    opacity: 1;
+  }
+
+
+  #rodape_social_icons  a img,
+  .social-links a img {
+    max-width: 40px;
+  }
+
+  #rodape_social_icons,
+  .social-links {
+    width: 260px;
+  }
+
+  #rodape_social_icons a,
+  .social-links a {
+    padding: 12px;
+  }
+
+  .desktop{
+    display: none !important;
+  }
+  .mobile{
+    display: initial !important;
+  }
+  
+  .background_txt_thumb {
+      position: absolute;
+      width: 100%;
+      left: 0%;
+      top: 0%;
+      height: 1000px;
+      background-color: #000;
+      opacity: 0.4;
+      z-index: 1;
+  }
+
+  .destaque_categorias > .bloco_post > p {
+    width: 100%;
+  }
+
+  #rolldownslide,
+  .slide_home .botao_azul{
+    display: none;
+  }
+  header#pagina_cabecalho h1,
+  .slide_home .lado-texto p {
+    color: #fff !important;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px#000;
+  }
+
+  header#pagina_cabecalho h1 {
+      font-size: 38px !important;
+  }
+
+  .carousel-control.left, .carousel-control.right {
+    display: none;
+  }
+
+  #pagina_cabecalho .carousel-inner .item .container {
+    width: 100%;
+    float: left;
+    background-position: top center;
+    background-size: 80%;
+    background-repeat: no-repeat !important;
+  }
 
   .botao_azul, button, input[type=submit] {
     font: 17px Arial !important;
@@ -3853,7 +3969,7 @@ Pagina de desenvolvimetno "espera"
     float: none;
     margin: 0 auto;
     text-align: center;
-    width: 236px;
+    width: 260px;
   }
 
 
@@ -3896,7 +4012,31 @@ Pagina de desenvolvimetno "espera"
 
 /*--------------- de 768 para baixo   ---------------*/
 @media (max-width: 768px){
+  #copyright {
+    text-align: center;
+    width: 100%;
+  }
 
+  .footer-copyright {
+    margin-top: 32px;
+  }
+
+  .link_de_indicacao{
+    font-size:22px;
+  }
+
+  footer .text-left,
+  footer{
+    text-align: center;
+  }
+  .footer-copyright{
+    text-align: center;
+    width: 100%;
+  }
+  .logo-footer{
+    max-width: 90px;
+    float: none;
+  }
   .contato-componentes {
       float: right;
       width: 50%;
@@ -3918,9 +4058,6 @@ Pagina de desenvolvimetno "espera"
 
   #navbar{
     overflow: hidden;
-  }
-  #rodape_social_icons a > img {
-    max-width: 62px !important;
   }
 
   .destaque_2 > .bloco_destaque{
@@ -4254,8 +4391,58 @@ Pagina de desenvolvimetno "espera"
 
 
 /*--------------- Landscape phones and smaller ---------------*/
-@media (max-width: 700px) {
 
+@media (max-width: 768px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 54px;
+        left: -20%;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 130%;
+    }
+    .navbar-collapse.collapsing {
+        height: auto;
+        -webkit-transition: left 0.3s ease;
+        -o-transition: left 0.3s ease;
+        -moz-transition: left 0.3s ease;
+        transition: left 0.3s ease;
+        left: -70%;
+    }
+    .navbar-collapse.show {
+        left: -20%;
+        -webkit-transition: left 0.3s ease-in;
+        -o-transition: left 0.3s ease-in;
+        -moz-transition: left 0.3s ease-in;
+        transition: left 0.3s ease-in;
+    }
+
+  /*>>>>>>>>>>>>>>>>>>> topo >>>>>>>>>>>>>>>>>>>>>>*/
+  .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background: none;
+  }
+  .navbar-toggle{
+    width: 10%;
+  }
+  #pequena_logo_topo img{
+    display: initial;
+  }
+  #pequena_logo_topo{
+    width: 80%;
+    text-align: center;
+  }
+  #botao_pesquisa.fa.fa-search{
+    width: 10%;
+  }
+  #menu_topo .navbar-header{
+    width: 90%;
+    display: table;
+  }
+  .project-dec h4 {
+    font-size: 16px;
+  }
+  /*<<<<<<<<<<<<<<<<<<<<<< topo <<<<<<<<<<<<<<<<<<<<<<<<*/
   .destaque_2 > .bloco_destaque {
     height: 343px !important;
   }
@@ -4411,18 +4598,7 @@ Pagina de desenvolvimetno "espera"
     height: auto;
   }
 
-  #espera .social-links a img {
-    max-width: 40px;
-  }
-
-  #espera .social-links {
-    width: 260px;
-  }
-
-  #espera .social-links a {
-    padding: 12px;
-  }
-
+ 
   #espera .txt-espera-baixo{
     margin-top:15px; 
     text-align:center;

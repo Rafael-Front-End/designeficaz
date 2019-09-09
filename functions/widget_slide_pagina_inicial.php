@@ -37,7 +37,7 @@ class slide_pagina_inicial extends WP_Widget
 
             $html_destaques .= " 
                 <div style='".($background != NULL ? 'background-color:'.$background.';' : '')."' class=\"item ".($contador_de_post == 1 ? 'active' : '')."\">
-                  <div class=\"container\">";
+                  <div class=\"container desktop\">";
 
                     if($img_align == 'Esquerda'){
                         $html_destaques .="<div class='lado-imagem imagem_slide'>$lado_imagem</div>";
@@ -57,8 +57,26 @@ class slide_pagina_inicial extends WP_Widget
 
             $html_destaques .= "
                       
-                  </div>
+                  </div>";
 
+            $html_destaques .= " 
+                  <div class=\"container mobile\" style='background-image:url(\"{$imagem}\");'>
+                  <div class=\"background_txt_thumb\"></div>
+                  ";
+
+                    $html_destaques .= " 
+                       <div class='lado-texto'>
+                        <h1>{$titulo}</h1>
+                        {$texto}
+                      </div>
+                      ";
+
+            $html_destaques .= "
+                      
+                  </div>";
+
+
+            $html_destaques .= "
                 </div>
                 <div id=\"#rolldownslide\"></div>
             ";

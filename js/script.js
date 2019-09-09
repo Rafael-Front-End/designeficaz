@@ -27,6 +27,20 @@ $(window).load(function() {
 });
  
 $(function(){ 
+	// $( document ).on( "mobileinit", function() {
+	//     $.mobile.loader.prototype.options.disabled = true;
+	// });
+	// // As submitted by @Aras
+	// $.mobile.loading( "hide" );
+	// // (or presumably as submitted by @Pnct)
+	// $.mobile.loading().hide();
+	// $("#myCarousel").swiperight(function() {
+ //      $(this).carousel('prev');
+ //    });
+ //   $("#myCarousel").swipeleft(function() {
+ //      $(this).carousel('next');
+ //   });
+
 	$('.orcamento_botao').on("click", function(){
 		if($("input[value='"+$(this).data('checkbox')+"']:checkbox:checked").length > 0){
 			$("input[value='"+$(this).data('checkbox')+"']").prop( "checked", false );
@@ -39,6 +53,7 @@ $(function(){
 	var altura_slide = $(window).height() - $('#menu_topo').height();
 	
 	$('#pagina_cabecalho .carousel-inner .item').css({'height': altura_slide+'px'});
+	$('#pagina_cabecalho .carousel-inner .item .container').css({'height': altura_slide+'px'});
 	$('#pagina_cabecalho .carousel-inner').css({'height': altura_slide+'px'});
 
 	  /*----------------------------
