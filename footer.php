@@ -47,7 +47,7 @@
 
 
     
-    <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/script.js" language="javascript"></script>
+    <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/script.js?version=0.0.0.6" language="javascript"></script>
 
  
 	<div id="fb-root"></div>

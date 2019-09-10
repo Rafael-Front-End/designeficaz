@@ -2828,7 +2828,6 @@ transition: color 0.25s linear !important;
 .destaque_categorias > .bloco_post > p {
   float: left;
   margin: 0;
-  width: 50%;
 }
 
 .destaque_categorias > .bloco_post > .thumbnail_post{
@@ -3651,6 +3650,32 @@ Pagina de desenvolvimetno "espera"
 
 
 @media (max-width: 768px){
+  #myCarousel h1,
+  #myCarousel p,
+  #myCarousel{
+    color:#fff !important;
+    z-index:1;
+    position: relative;
+  }
+  header#pagina_cabecalho{
+    padding-top: 30px; 
+  }
+  .dropdown-menu{
+    text-align: center;
+  }
+  #barra_pesquisa {
+    height: 160px;
+  }
+
+  #pesquisa_topo > input {
+    width: 100% !important;
+  }
+
+  #pesquisa_topo > button {
+    width: 100%;
+    border-radius: 6px;
+  }
+
   #navbar{
     border:none;
   }
@@ -3722,20 +3747,9 @@ Pagina de desenvolvimetno "espera"
       z-index: 1;
   }
 
-  .destaque_categorias > .bloco_post > p {
-    width: 100%;
-  }
-
   #rolldownslide,
   .slide_home .botao_azul{
     display: none;
-  }
-  header#pagina_cabecalho h1,
-  .slide_home .lado-texto p {
-    color: #fff !important;
-    position: relative;
-    z-index: 2;
-    text-shadow: 2px 2px 4px#000;
   }
 
   header#pagina_cabecalho h1 {
@@ -3910,10 +3924,6 @@ Pagina de desenvolvimetno "espera"
 
 /*--------------- de 860 para baixo   ---------------*/
 @media (max-width: 860px){
-
-  .bloco_post.texto_direita .coluna1 {
-      width: 20%;
-  }
 
   .bloco_checkbox_orcamento {
     min-height: 200px;
@@ -4487,14 +4497,6 @@ Pagina de desenvolvimetno "espera"
     width: 100%;
   }
 
-  #pesquisa_topo > button {
-    width: 21%;
-  }
-
-  #pesquisa_topo > input {
-    width: 78%;
-  }
-
   .destaque_2 > .bloco_destaque {
     height: 343px !important;
   }
@@ -4525,7 +4527,9 @@ Pagina de desenvolvimetno "espera"
 
 
 @media (max-width: 480px) {
-
+  .bloco_post .thumbnail > img {
+    width: 100%;
+  }
   #site {
     padding: 115px 0 0;
   }
@@ -4942,7 +4946,7 @@ WordPress Core= */
 
   header#pagina_cabecalho h1 {
     font-size: 44px !important;
-    line-height: 47px !important;
+    line-height: 65px !important;
     margin: 0 auto 8px !important;
     padding: 0;
     font-weight: bold !important;

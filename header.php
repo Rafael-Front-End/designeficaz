@@ -43,7 +43,7 @@ $fontes_config = $_SESSION['fontes_config'];
     <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/jqueryslimscroll/jquery.slimscroll.js"></script>
     <link href="<?php bloginfo( 'template_directory' ); ?>/js/jqueryslimscroll/examples/style.css" type="text/css" rel="stylesheet" />
 
-    <link href="<?php echo bloginfo('stylesheet_url'); ?>" type="text/css" media="all" rel="stylesheet" />
+    <link href="<?php echo bloginfo('stylesheet_url'); ?>?version=0.0.4.6" type="text/css" media="all" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_directory')?>/imagens/fav32x32.ico" />
     
     <?php
